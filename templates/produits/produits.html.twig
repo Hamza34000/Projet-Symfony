@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+	<!-- SECTION -->
+	<!-- HOT DEAL SECTION -->
+		<div
+		id="hot-deal" class="section"> <!-- container -->
+		<div
+			class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div>
+						<h1 style="font-size:70px;color:white;padding-top:100px;text-shadow: #FC0 1px 0 10px;">Bienvenue au site
+							<br>
+							Hamza Market</h1>
+					</div>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /HOT DEAL SECTION -->
+	<!-- /SECTION -->
+
+
+	<!-- SECTION -->
+	<!-- container -->
+		<div class="container">
+        <div class="row">
+            {% for categorie in categories %}
+				
+			
+			<div class="col-sm-4">
+                <div class="card">
+				<h1 style="font-size:22px; margin-top: 35px;">{{categorie.nom}}</h1>
+				<div class="card-header">
+					<a href="{{ path('produits',{categorie : categorie.id }) }}"><img src="{{categorie.photos}}" alt=""></a>
+				</div>
+                    <div class="card-body">
+                        {# <a href="#" style="color: #6BB5B5; font-weight: bold;"> Voir tout</a> #}
+						<a href="{{ path('produits',{categorie : categorie.id }) }}" style="color: #6BB5B5; font-weight: bold;">Voir tout</a>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
+        </div>
+    </div>
+	<!-- /SECTION -->
+{% endblock %}

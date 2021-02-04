@@ -1,0 +1,26 @@
+#easy_admin:
+#    entities:
+#        # List the entity class name you want to manage
+#        - App\Entity\Product
+#        - App\Entity\Category
+#        - App\Entity\User
+easy_admin:
+  site_name: Produits 
+  
+  design:
+    menu:
+      - { route: 'produits', label: 'Back to the website', icon: 'home' }
+      - { entity: 'Produits', label: 'Produitss', icon: 'map-marker' }
+      - { entity: 'Commande', label: 'Commandes', icon: 'Commandes' }
+  entities:
+    Produits:
+      class: App\Entity\Produits
+    Commande:
+      class: App\Entity\Commande
+      list:
+        fields:
+          - { property: 'reference', type: 'int' }
+          - { property: 'nomProduit', type: 'string' }
+          - { property: 'quantite', type: 'int' }
+          - { property: 'prix', type: 'int' }
+        sort: [ 'nomProduit', 'ASC' ]

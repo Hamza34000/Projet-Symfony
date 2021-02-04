@@ -1,13 +1,264 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		{% block title %}
+			
+		<title>Hamza Market</title>
+		
+		{% endblock %}
+		{% block stylesheets %}
+		<!-- Google font -->
+		<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link
+		type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link
+		type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link
+		type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link
+		rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		{% endblock %}
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+										  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+										  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+										<![endif]-->
+
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-right">
+						<li>
+							<a href="#">
+
+								Aide</a>
+						</li>
+						<li>|
+							<a href="#">
+
+								S'inscrire</a>
+						</li>
+						<li>|
+							<a href="#">
+
+								S'identifier</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav
+			id="navigation">
+			<!-- container -->
+			<div
+				class="container">
+				<!-- responsive-nav -->
+				<div
+					id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active">
+							<a href="/" style="margin-right: 120px;"><img src="img/logo.jpg" width="150px" alt=""></a>
+						</li>
+						<li>
+							<a href="/produits?categorie=1">Livres</a>
+						</li>
+						<li>
+							<a href="/produits?categorie=5">Jouets</a>
+						</li>
+						<li>
+							<a href="/produits?categorie=3">Jeux vidéos</a>
+						</li>
+						<li>
+							<a href="/produits?categorie=4">Electromenager</a>
+						</li>
+						<li>
+							<a href="/produits?categorie=2">Musiques</a>
+						</li>
+					</ul>
+					<form class="form-inline text-right">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		
+		<!-- /NAVIGATION -->
+		<div id="top-header">
+			<div class="container">
+				<p class="text-center">
+					CODE PROMO -45% :
+					<span style="color: #D10024;">
+						<strong>COVID21</strong>
+					</span>
+				</p>
+			</div>
+		</div>
+	{% block body %}
+
+	
+		
+	{% endblock %}
+		<!-- SECTION -->
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		
+		<!-- /NEWSLETTER -->
+		<!-- FOOTER -->
+		<br><br><br><br><footer
+			id="footer">
+			<!-- top footer -->
+			<div
+				class="section">
+				<!-- container -->
+				<div
+					class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">A propos</h3>
+								<p>Petit site de eCommerce réaliser avec Symfony</p>
+								<ul class="footer-links">
+									<li>
+										<a href="#">
+											<i class="fa fa-map-marker"></i>22 Rue Louis Lepine</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-phone"></i>+33 6 95 05 60 33</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-envelope-o"></i>hamza.roger@hotmail.fr</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Catégories</h3>
+								<ul class="footer-links">
+									<li>
+										<a href="/produits?categorie=1">Livres</a>
+									</li>
+									<li>
+										<a href="/produits?categorie=5">Jouets</a>
+									</li>
+									<li>
+										<a href="/produits?categorie=3">Jeux vidéos</a>
+									</li>
+									<li>
+										<a href="/produits?categorie=4">Electroménager</a>
+									</li>
+									<li>
+										<a href="/produits?categorie=2">Musique</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Information</h3>
+								<ul class="footer-links">
+									<li>
+										<a href="#">Contacts</a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li>
+										<a href="#">Mon compte</a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+									<li>
+										<a href="#"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		{% block javascripts %}
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+		{% endblock %}
+	</body>
 </html>
