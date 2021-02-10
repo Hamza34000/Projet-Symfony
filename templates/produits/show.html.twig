@@ -7,25 +7,45 @@
 
 
 				<div class="col-sm-4">
-					<div class="card">
+					<div class="card" >
 
-						<div class="card-header">
-							<img src="{{produit.photo}}" alt="">
+						<div class="card-header" >
+							{% if produit.stock < 1 %}
+							<img src="images/antonio2.png" alt=""  >	
+							{% else %}
+							<a href="{{path('produits_description', {id : produit.id })}}"><img src="{{produit.photo}}" alt="" ></a>
+							{% endif %}
 						</div>
+						{% if produit.stock < 1 %}
+						
+						<div class="card-body">
+							<div class="col-sm-6">
+								<h4><strike>{{produit.nom}}</strike></h4>
+							</div>
+							<div class="col-sm-6 text-right">
+								<strike><h4 style="color: #6BB5B5; font-weight: bold;">{{produit.prix}}€</h4></strike>
+							</div>	
+						{% else %}
 						<div class="card-body">
 							<div class="col-sm-6">
 								<h4>{{produit.nom}}</h4>
 							</div>
 							<div class="col-sm-6 text-right">
 								<h4 style="color: #6BB5B5; font-weight: bold;">{{produit.prix}}€</h4>
+								<a href="{{path('panier_ajout', {id : produit.id })}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</a>
 							</div>
+							{% endif %}
+							{% if produit.stock < 10 %}
+									<p>*Plus que {{produit.stock}} en stock</p>
+							{% endif %}
+							
 						</div>
-
 					</div>
 				</div>
 			{% endfor %}
 
 		</div>
 	</div>
-
+<br>
 {% endblock %}
+

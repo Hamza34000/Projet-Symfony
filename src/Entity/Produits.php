@@ -44,6 +44,11 @@ class Produits
      */
     private $categorie;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $stock;
+
 
     public function __construct()
     {
@@ -135,6 +140,18 @@ class Produits
     public function setCategorie(int $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(int $stock): self
+    {
+        $this->stock = $stock;
 
         return $this;
     }

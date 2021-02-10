@@ -15,6 +15,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProduitsRepository extends ServiceEntityRepository
 {
+    public const PAGINATOR_PER_PAGE = 20;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Produits::class);
@@ -58,5 +59,6 @@ class ProduitsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
 
 }

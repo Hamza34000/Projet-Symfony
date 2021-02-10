@@ -428,6 +428,8 @@ textarea.input {
 	Top header
 \*----------------------------*/
 
+
+
 #top-header {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -2154,6 +2156,25 @@ textarea.input {
   margin: 15px 0px;
 }
 
+
+.flexy{
+
+  display: flex;
+  flex-direction: row;
+}
+
+.component h4{
+
+
+  padding-top: 30px ;
+  
+  
+}
+
+.component{
+  flex-grow: 1;
+}
+
 /*=========================================================
 	13 -> RESPONSIVE
 ===========================================================*/
@@ -2211,3 +2232,4 @@ textarea.input {
     margin-top: 10px;
   }
 }
+

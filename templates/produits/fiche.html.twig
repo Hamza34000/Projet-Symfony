@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container" style ="height: calc(56vh - 50px);">
+		<div class="row">
+
+			<div class="flexy">
+				<div class="card-header">
+					<img src="/{{produits.photo}}" alt="">
+				</div>
+
+
+				<div class="component">
+					
+                    <div class="flexy">
+                        <div>
+                            <h4>{{produits.nom}}</h4>
+                        </div>
+                        <div>
+					        <h4 style="color: #6BB5B5; font-weight: bold;margin-left: 50px;">{{produits.prix}}€</h4>
+					    </div>
+                    </div>
+                    <h5 style="padding-top:10px;">Description : </h5>
+                    <p class="text-justify">
+                    On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).
+
+                    </p>
+                    <div>
+                    <a href="{{path('panier_ajout', {id : produits.id })}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Ajouter au panier</a>
+                    <a href="#"><i class="fa fa-usd" aria-hidden="true" style="padding-left:590px;"></i>Commander</a>
+                    </div>
+				</div>
+                    
+			</div>
+		</div>
+
+
+	</div>
+{% endblock %}

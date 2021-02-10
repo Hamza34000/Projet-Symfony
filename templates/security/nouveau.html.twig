@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="container" style="width:500px;  height: calc(58vh - 50px);">
+		<div class="row">
+			<h1 class="h3 mb-3 font-weight-normal text-center" style="margin:20px 0;">Inscrivez-vous</h1>
+			<div class="card-body">
+				{{ form_start(form_admin) }}
+				{{ form_row(form_admin.username) }}
+
+				{{ form_row(form_admin.password.first) }}
+				{{ form_row(form_admin.password.second) }}
+				{{ form_row(form_admin.prenom) }}
+				{{ form_row(form_admin.nom) }}
+				{{ form_row(form_admin.adresse) }}
+
+				<div class="text-center ">
+					<button class="btn  btn-success btn-sm " style="margin-top: 20px;" type="submit">
+						Inscription
+					</button>
+				</div>
+				{{ form_end(form_admin) }}
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}

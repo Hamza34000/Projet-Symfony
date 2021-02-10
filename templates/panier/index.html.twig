@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<div class="container" style="height: 30vw;">
+		<div class="row">
+        {% if paniers | length > 0 %}
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Produits</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier in paniers %}
+            <tr>
+                <td>
+                <img src="{{panier.produits.photo}}" width="150px" alt="">
+                </td>
+                <td style="padding-top:80px;">
+                {{panier.produits.nom}}
+                </td>
+                <td style="padding-top:80px;">{{panier.produits.prix}}€</td>
+                <td style="padding-top:80px;"><a href="{{path('panier_moins', {id : panier.produits.id})}}" class="badge badge-light" style="margin-right: 5px;">- </a>{{panier.quantite}}<a href="{{path('panier_ajout', {id : panier.produits.id})}}" class="badge badge-light" style="margin-left: 5px;"> +</a></td>
+                <td style="padding-top:80px;">{{panier.produits.prix * panier.quantite}}€</td>
+                <td style="padding-top:80px;">
+                <a href="{{path('panier_supprimer', {id : panier.produits.id})}}" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                </a> 
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right">Total : </td>
+                <td>{{total}}€</td>
+                <td></td>
+            </tr>
+        </tfoot>
+        </table> 
+
+        
+        {% if app.user %}
+        <div class="text-right"><a href="#"> Acheter</a>
+        </div> 
+        {% else %}
+        <div class="text-right"><a href="{{path('inscription')}}"  class="btn btn-outline-warning"> Connectez-vous pour finaliser la commande</a href="{{path('inscription')}}">
+        </div> 
+        {% endif %}         
+        {% else %}
+
+        <div class="container" style="width:500px;  height: calc(58vh - 50px);">
+        
+        <h1> Votre panier est vide !</h1>
+        </div>
+            
+        {% endif %}
+        
+        </div>
+	</div>
+{% endblock %}

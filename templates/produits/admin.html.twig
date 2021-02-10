@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="admin-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-outline-primary" style="float: right; margin-top: 50px;"><a href="{{ path('admin_newproduits') }}" style="float: right">Ajouter</a></button>
+                    <table class="table">
+                        <caption>Listes des Produits</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th>Nom</th>
+                                <th scope="col">Produits</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% set i = 1 %}
+                        {% for produit in produits %}
+                            <tr>
+                                <th scope="row">{{ i }}</th>
+                                <td><strong>{{produit.nom}}</strong></td>
+                                <td>   
+                                    <img src="{{ produit.photo }}" width="200px" alt=""></img>
+                                </td>
+                                <td>
+                                <a href="{{path('stock_supprimer', {'id': produit.id})}}" class="badge badge-light" style="margin-right: 5px;">- </a>{{produit.stock}}<a href="{{path('stock_ajout', {'id': produit.id})}}" class="badge badge-light" style="margin-left: 5px;"> +</a>
+                                </td>
+                            <td>
+            <a href="{{ path('admin_editproduits', {'id': produit.id}) }}"><i class="fa fa-pencil" aria-hidden="true" style="font-size:25px; color:#6BB5B5;"></i></a>
+            <a href="{{ path('admin_deleteproduits', {'id': produit.id}) }}"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:25px; color:red; margin-left:10px"></i></a>
+                                </td>
+                            </tr>
+                        {% set i = i+1 %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {# <div class="row">
+                <div class="col s12 m-t-30">
+                    <h5>Utilisateurs</h5>
+                    <table>
+                        <tr>
+                            <th>Adresse email</th>
+                            <th>Username</th>
+                            <th>Roles</th>
+                            <th>Actions</th>
+                        </tr>
+                        {% set i = 1 %}
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ i }}</td>
+                                <td>{{ user.nom }}</td>
+                                <td>{{ user.username }}</td>
+                                <td>
+                                    <span class="badge blue">
+                                        admin.
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href=""><i class="material-icons red-text">delete</i></a>
+                                </td>
+                            </tr>
+                            {% set i = i+1 %}
+                        {% endfor %}
+                    </table>
+                </div>
+            </div> #}
+        </div>
+    </div>
+
+{% endblock %}
+
